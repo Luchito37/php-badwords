@@ -7,16 +7,37 @@ c'è Vitaliano Brancati, che diventerà fondamentale nell'istruzione del futuro 
 coscienza civile sulle opere di Voltaire, Montesquieu, Cesare Beccaria, Pietro Verri. Proprio a Caltanissetta 
 vive gli anni più importanti della sua vita.";
 $parolaDaCensurare = $_GET["parolaDaCensurare"];
-
+$nuovoParagrafo = "";
 var_dump($_GET);
 
 
 if (stripos($paragrafo, $parolaDaCensurare) !== false) {
-    $paragrafo = str_ireplace($parolaDaCensurare, "***", $paragrafo);
+    $nuovoParagrafo = str_ireplace($parolaDaCensurare, "***", $paragrafo);
+    
 }
 
 ?>
 
-<h1>PARAGRAFO : <?php echo $paragrafo ?></h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h1>PARAGRAFO : </h1>
+<p><?php echo $paragrafo ?></p>
 
 <h2>LUNGHEZZA PARAGRAFO : <?php echo  strlen($paragrafo) ?></h2>
+
+<h1>NUOVO PARAGRAFO :</h1>
+<p><?php echo $nuovoParagrafo ?></p>
+
+<h2>LUNGHEZZA PARAGRAFO : <?php echo  strlen($nuovoParagrafo) ?></h2>
+
+</body>
+</html>
+
